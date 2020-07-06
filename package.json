@@ -1,0 +1,36 @@
+{
+  "name": "2020-fm-rock-paper-scissors-game",
+  "version": "1.0.0",
+  "description": "My implementation of Frontend Mentor's \"Rock, Paper, Scissors Game\" challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgdev1024/2020-fm-rock-paper-scissors-game.git"
+  },
+  "keywords": [
+    "frontend",
+    "mentor",
+    "rock",
+    "paper",
+    "scissors",
+    "game"
+  ],
+  "author": "Dennis Griffin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dgdev1024/2020-fm-rock-paper-scissors-game/issues"
+  },
+  "homepage": "https://github.com/dgdev1024/2020-fm-rock-paper-scissors-game#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.9"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
