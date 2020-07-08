@@ -1,0 +1,47 @@
+@import "../../global.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 640px;
+  margin: 0px auto;
+  padding: 8px;
+  border: 4px solid $color-header-outline;
+  border-radius: 4px;
+
+  &__heading {
+    font-size: 1.4em;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    line-height: 0.9em;
+    color: $color-white;
+  }
+
+  &__score-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: white;
+    border-radius: 4px;
+  }
+
+  &__score-text {
+    font-size: 0.75em;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $color-score-text;
+  }
+
+  &__score {
+    min-width: 64px;
+    font-size: 2.25em;
+    font-weight: $font-weight-bold;
+    color: $color-dark-text;
+    text-align: center;
+  }
+}

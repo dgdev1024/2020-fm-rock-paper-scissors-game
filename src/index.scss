@@ -1,1 +1,25 @@
 @import "./global.scss";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: $font-family-normal;
+  font-weight: $font-weight-normal;
+}
+
+.main {
+  height: 100vh;
+  min-height: 640px;
+  padding-top: 32px;
+  background-image: linear-gradient(
+    to bottom,
+    $color-background-gradient-start,
+    $color-background-gradient-end
+  );
+}
+
+.container {
+  width: 90%;
+  margin: 0px auto;
+}

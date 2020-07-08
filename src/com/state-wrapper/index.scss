@@ -1,0 +1,40 @@
+@import "../../global.scss";
+
+@keyframes state-wrapper-fade-in {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes state-wrapper-fade-out {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.state-wrapper {
+  opacity: 0;
+  visibility: hidden;
+  animation-duration: $time-transition-normal;
+  animation-fill-mode: forwards;
+
+  &--fade-in {
+    animation-name: state-wrapper-fade-in;
+  }
+
+  &--fade-out {
+    animation-name: state-wrapper-fade-out;
+  }
+}
