@@ -40,11 +40,20 @@ const ResultState = ({ requestStateId }) => {
   return (
     <div className="state result-state">
       <div className="result-state__player-choice">
-        <SelectChoice index={playerChoiceId} />
+        <SelectChoice
+          index={playerChoiceId}
+          tabbable={false}
+          winner={outcome === Result.Win}
+        />
         <p className="result-state__player-choice-text">You Picked</p>
       </div>
       <div className="result-state__house-choice">
-        <SelectChoice index={houseChoiceId} hidden={houseChoiceHidden} />
+        <SelectChoice
+          index={houseChoiceId}
+          hidden={houseChoiceHidden}
+          tabbable={false}
+          winner={outcome === Result.Lose}
+        />
         <p className="result-state__house-choice-text">The House Picked</p>
       </div>
       <div
