@@ -1,1 +1,243 @@
 @import "../../global.scss";
+
+.result-state {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "player house" "outcome outcome";
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+
+  @media #{$screen-medium} {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "player outcome house";
+    gap: 32px;
+  }
+
+  &__player-choice {
+    grid-area: player;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media #{$screen-medium} {
+      flex-direction: column-reverse;
+    }
+
+    @media #{$screen-large} {
+      justify-self: end;
+    }
+
+    &-text {
+      padding-top: 24px;
+      font-weight: $font-weight-semibold;
+      letter-spacing: 0.1em;
+      color: $color-white;
+      text-transform: uppercase;
+
+      @media #{$screen-medium} {
+        padding-top: 0px;
+        padding-bottom: 24px;
+      }
+    }
+  }
+
+  &__house-choice {
+    grid-area: house;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media #{$screen-medium} {
+      flex-direction: column-reverse;
+    }
+
+    @media #{$screen-large} {
+      justify-self: start;
+    }
+
+    &-text {
+      padding-top: 24px;
+      font-weight: $font-weight-semibold;
+      letter-spacing: 0.1em;
+      color: $color-white;
+      text-transform: uppercase;
+
+      @media #{$screen-medium} {
+        padding-top: 0px;
+        padding-bottom: 24px;
+      }
+    }
+  }
+
+  &__outcome {
+    grid-area: outcome;
+    justify-self: center;
+    opacity: 1;
+    visibility: visible;
+    transition: $time-transition-normal;
+
+    &--hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &-text {
+      font-size: 3em;
+      font-weight: $font-weight-bold;
+      color: $color-white;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    &-play-again {
+      display: block;
+      width: 240px;
+      margin: 0px auto;
+      margin-top: 12px;
+      padding: 12px;
+      font-size: 1.1em;
+      font-weight: $font-weight-semibold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $color-white;
+      background-color: transparent;
+      border: 1px solid $color-white;
+      border-radius: 8px;
+      transition: $time-transition-normal;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $color-white;
+        color: $color-dark-text;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .select-choice {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $time-transition-normal;
+
+    &--hidden {
+      opacity: 0;
+    }
+
+    @media #{$screen-medium} {
+      width: 160px;
+      height: 160px;
+    }
+
+    @media #{$screen-large} {
+      width: 192px;
+      height: 192px;
+    }
+
+    @media #{$screen-extra-large} {
+      width: 224px;
+      height: 224px;
+    }
+
+    &__svg-container {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background-image: radial-gradient(
+        circle farthest-side at bottom,
+        $color-white-gradient-end,
+        $color-white-gradient-end 94%,
+        $color-white-gradient-start 94%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $time-transition-normal;
+
+      @media #{$screen-medium} {
+        width: 128px;
+        height: 128px;
+      }
+
+      @media #{$screen-large} {
+        width: 160px;
+        height: 160px;
+      }
+
+      @media #{$screen-extra-large} {
+        width: 192px;
+        height: 192px;
+      }
+    }
+
+    &--hidden .select-choice__svg-container {
+      background-image: none;
+      background-color: $color-dark-text;
+    }
+
+    &--rock {
+      background-image: radial-gradient(
+        circle farthest-side at top,
+        $color-rock-gradient-end,
+        $color-rock-gradient-end 94%,
+        $color-rock-gradient-start 94%
+      );
+
+      @media #{$screen-small} {
+        bottom: 0px;
+      }
+
+      @media #{$screen-medium} {
+        left: calc(50% - 80px);
+      }
+    }
+
+    &--paper {
+      background-image: radial-gradient(
+        circle farthest-side at top,
+        $color-paper-gradient-end,
+        $color-paper-gradient-end 94%,
+        $color-paper-gradient-start 94%
+      );
+
+      @media #{$screen-small} {
+        left: calc(50% - 64px - 120px);
+      }
+
+      @media #{$screen-medium} {
+        left: calc(50% - 80px - 120px);
+      }
+    }
+
+    &--scissors {
+      background-image: radial-gradient(
+        circle farthest-side at top,
+        $color-scissors-gradient-end,
+        $color-scissors-gradient-end 94%,
+        $color-scissors-gradient-start 94%
+      );
+
+      @media #{$screen-small} {
+        left: calc(50% - 64px + 120px);
+      }
+
+      @media #{$screen-medium} {
+        left: calc(50% - 80px + 120px);
+      }
+    }
+  }
+}

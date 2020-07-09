@@ -1,1 +1,132 @@
 @import "../../global.scss";
+
+.select-state {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .select-choice {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $time-transition-normal;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media #{$screen-medium} {
+      width: 160px;
+      height: 160px;
+    }
+
+    &__svg-container {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background-image: radial-gradient(
+        circle farthest-side at bottom,
+        $color-white-gradient-end,
+        $color-white-gradient-end 94%,
+        $color-white-gradient-start 94%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $time-transition-normal;
+
+      @media #{$screen-medium} {
+        width: 128px;
+        height: 128px;
+      }
+    }
+
+    &--rock {
+      bottom: 32px;
+      left: calc(50% - 64px);
+      background-image: radial-gradient(
+        circle farthest-side at top,
+        $color-rock-gradient-end,
+        $color-rock-gradient-end 94%,
+        $color-rock-gradient-start 94%
+      );
+
+      .svg__path {
+        transition: $time-transition-normal;
+      }
+
+      &:hover .svg__path {
+        fill: $color-rock-gradient-end;
+      }
+
+      @media #{$screen-small} {
+        bottom: 0px;
+      }
+
+      @media #{$screen-medium} {
+        left: calc(50% - 80px);
+      }
+    }
+
+    &--paper {
+      top: 0px;
+      left: calc(50% - 64px - 96px);
+      background-image: radial-gradient(
+        circle farthest-side at top,
+        $color-paper-gradient-end,
+        $color-paper-gradient-end 94%,
+        $color-paper-gradient-start 94%
+      );
+
+      .svg__path {
+        transition: $time-transition-normal;
+      }
+
+      &:hover .svg__path {
+        fill: $color-paper-gradient-end;
+      }
+
+      @media #{$screen-small} {
+        left: calc(50% - 64px - 120px);
+      }
+
+      @media #{$screen-medium} {
+        left: calc(50% - 80px - 120px);
+      }
+    }
+
+    &--scissors {
+      top: 0px;
+      left: calc(50% - 64px + 96px);
+      background-image: radial-gradient(
+        circle farthest-side at top,
+        $color-scissors-gradient-end,
+        $color-scissors-gradient-end 94%,
+        $color-scissors-gradient-start 94%
+      );
+
+      .svg__path {
+        transition: $time-transition-normal;
+      }
+
+      &:hover .svg__path {
+        fill: $color-scissors-gradient-end;
+      }
+
+      @media #{$screen-small} {
+        left: calc(50% - 64px + 120px);
+      }
+
+      @media #{$screen-medium} {
+        left: calc(50% - 80px + 120px);
+      }
+    }
+  }
+}
