@@ -6,6 +6,7 @@ import React from "react";
 import GameProvider from "../ctx/game";
 import Header from "./header";
 import StateWrapper from "./state-wrapper";
+import Rules from "./rules";
 
 const InnerApp = () => {
   return (
@@ -13,6 +14,7 @@ const InnerApp = () => {
       <div className="container">
         <Header />
         <StateWrapper />
+        <Rules />
       </div>
     </main>
   );
