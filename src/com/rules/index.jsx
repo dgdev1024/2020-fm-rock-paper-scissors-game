@@ -26,6 +26,7 @@ const Rules = () => {
           <button
             onClick={() => setShowRules(false)}
             className="rules-modal__close"
+            aria-label="Close Rules Window"
           >
             <IconClose />
           </button>

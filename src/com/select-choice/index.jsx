@@ -19,6 +19,7 @@ const SelectChoice = ({
         hidden && "select-choice--hidden"
       }`}
       onClick={() => selectChoice(index)}
+      aria-label={ClassNames[index]}
     >
       <div className="select-choice__svg-container">
         <IconComponent className="select-choice__svg" />
